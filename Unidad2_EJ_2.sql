@@ -1,37 +1,97 @@
---1.3 - pruebas default
-INSERT INTO Rubros (id,descripcion) values (1,"Descripcion")
-INSERT INTO Rubros (descripcion) values ("nueva descr")
-INSERT INTO Movimientos (Cantidad,Fecha) values ()
-INSERT INTO Movimientos (Cantidad,Fecha) values (15)
-INSERT INTO Operaciones (idOperacion,Operando,Descripcion) values (3,,hola)
-INSERT INTO Operaciones (Operando,Descripcion) values ()
+CREATE DATABASE Aeropuerto
+USE Aeropuerto 
+go
+-----------------------------------------------------------------------------------------------------------
+-- CIUDADES --
+CREATE TABLE Ciudades(
+CiudadId ,
+Nombre,
+constraint Ciudades CHECK (),
+)
+--test
 
---.4 pruebas nulo
-INSERT INTO Rubros (Descripcion) VALUES ()
-INSERT INTO Articulos (Nombre,Precio) VALUES (,'Mouse',350)
-INSERT INTO Articulos (Nombre,Precio) VALUES ('',350)
-INSERT INTO Articulos (Nombre,Precio) VALUES ('Mouse',)
-INSERT INTO Stock (Cantidad) VALUES ()
-INSERT INTO Depositos (Nombre) VALUES ('Deposito')
-INSERT INTO Depositos (Nombre) VALUES (111,'')
+go
+-----------------------------------------------------------------------------------------------------------
+-- AEROPUERTOS--
+CREATE TABLE Aeropuertos(
+AeropuertoID,
+constraint Ciudades CHECK (),
+)
+--test
 
---1.5 pruebas dominios
+go
+-----------------------------------------------------------------------------------------------------------
+-- RUTAS --
+CREATE TABLE Rutas(
+RutaId
+DistanciaKms
+TiempoMinutos
+constraint Ciudades CHECK (),
+)
+--test
 
---1.6 pruebas check 
-INSERT INTO Rubros (Descripcion) VALUES ('a2')
-INSERT INTO Articulos (Nombre,Precio) VALUES ('AA12A','Arti',1500)
-INSERT INTO Articulos (Nombre,Precio) VALUES ('AA123','Ar',1500)
-INSERT INTO Articulos (Nombre,Precio) VALUES ('AA123','Articulo',-2)
-INSERT INTO Stock (Cantidad) VALUES (-2)
-INSERT INTO Depositos (Nombre) VALUES (1a1,'dep')
-INSERT INTO Depositos (Nombre) VALUES (a12,'de')
-INSERT INTO Movimientos (Cantidad,Fecha) VALUES (1,-2,Today)
+GO
+-----------------------------------------------------------------------------------------------------------
+-- RUTA_DIA_AERONAVE --
+CREATE TABLE RUTA_DIA_AERONAVE(
+Horario
+VueloNumero
+Habilitado_hasta
+constraint Ciudades CHECK (),
+)
+--test
 
-INSERT INTO () VALUES ()
-INSERT INTO Operando () VALUES ()
-INSERT INTO () VALUES ()
-INSERT INTO () VALUES ()
+GO
+-----------------------------------------------------------------------------------------------------------
+-- AERONAVES --
+CREATE TABLE Aeronaves(
+AeronaveId,
+Matricula varchar(5),
+Modelo varchar(4),
+MaximosPasajeros,
+MaximoCarga,
+constraint Ciudades CHECK (),
+)
+--test
 
---1.7 prueba valores unicos 
-INSERT INTO () VALUES ()
-INSERT INTO () VALUES ()
+GO
+-----------------------------------------------------------------------------------------------------------
+--DIAS
+CREATE TABLE Dias(
+DiaId,
+Nombre,
+constraint Ciudades CHECK (),
+)
+--test
+
+GO
+-----------------------------------------------------------------------------------------------------------
+-- VUELOS --
+CREATE TABLE Vuelos(
+Fecha
+constraint Ciudades CHECK (),
+)
+--test
+
+GO
+-----------------------------------------------------------------------------------------------------------
+-- PASAJES --
+CREATE TABLE Pasajes(
+Asiento
+PasajeroId
+PaisOrigen
+TipoDocumento
+NúmeroDocumento
+Nombre
+constraint Ciudades CHECK (),
+)
+--test
+
+GO
+-----------------------------------------------------------------------------------------------------------
+-- PASAJEROS --
+CREATE TABLE Pasajeros(
+constraint Ciudades CHECK (),
+)
+--test
+
